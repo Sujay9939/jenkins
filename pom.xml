@@ -13,13 +13,10 @@
     <name>myapp</name>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <!-- MATCH WITH JENKINS JDK -->
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
     </properties>
-
-    <dependencies>
-        <!-- (Optional) Add dependencies if needed -->
-    </dependencies>
 
     <build>
         <finalName>myapp</finalName>
@@ -33,7 +30,7 @@
                 <version>3.11.0</version>
             </plugin>
 
-            <!-- JAR Plugin (VERY IMPORTANT) -->
+            <!-- Make JAR executable -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -41,7 +38,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <!-- CHANGE THIS to your actual main class -->
+                            <!-- CHANGE THIS -->
                             <mainClass>com.sujay.App</mainClass>
                         </manifest>
                     </archive>
