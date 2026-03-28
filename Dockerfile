@@ -1,4 +1,7 @@
-FROM java-21-openjdk-amd64
+FROM openjdk:21
+
 WORKDIR /app
-COPY target/myapp.jar app.jar
+
+COPY target/*.jar app.jar
+
 ENTRYPOINT ["java", "-jar", "app.jar"]
